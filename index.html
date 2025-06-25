@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="assets/logo.ico">
+    <title>BitEU - Digital Forensics Tools</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Homepage specific styles */
+        .hero h1 {
+            font-size: 4rem;
+        }
+        
+        .hero .subtitle {
+            font-size: 1.5rem;
+        }
+        
+        @media (max-width: 768px) {
+            .hero .subtitle {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="logo">
+                🔬 BitEU
+            </a>
+            <ul class="nav-links">
+                <li><a href="#tools">Tools</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="https://github.com/BitEU" target="_blank">GitHub</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content fade-in">
+                <h1>BitEU</h1>
+                <p class="subtitle">Open Source Digital Forensics Tools</p>
+                <p class="hero-description">
+                    Empowering investigators and researchers with powerful, accessible forensic analysis tools. 
+                    Our suite of open-source applications helps uncover digital evidence and solve complex cases.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tools Section -->
+    <section id="tools" class="tools">
+        <div class="container">
+            <h2 class="section-title fade-in">Our Tools</h2>
+            <div class="tools-grid">
+                <a href="fender.html" class="tool-card fade-in">
+                    <span class="tool-icon">🚗</span>
+                    <h3>FENDER</h3>
+                    <p>Forensic Extraction of Navigational Data & Event Records. Extract GPS location data from vehicle telematics binary files across multiple manufacturers.</p>
+                    <span class="tool-tag">Vehicle Forensics</span>
+                </a>
+                <a href="enf-extractor.html" class="tool-card fade-in">
+                    <span class="tool-icon">📊</span>
+                    <h3>ENF-Extractor</h3>
+                    <p>Extract Electrical Network Frequency (ENF) traces from audio and video files for timestamp verification and authentication.</p>
+                    <span class="tool-tag">Audio/Video Analysis</span>
+                </a>
+                <a href="comrade.html" class="tool-card fade-in">
+                    <span class="tool-icon">📡</span>
+                    <h3>COMRADE</h3>
+                    <p>Automated extraction and analysis of network adapter information from Windows memory dumps for forensic investigations.</p>
+                    <span class="tool-tag">Memory Forensics</span>
+                </a>
+                <a href="winspread.html" class="tool-card fade-in">
+                    <span class="tool-icon">💾</span>
+                    <h3>WinSpread</h3>
+                    <p>Extract and analyze Windows OS artifacts from file systems and disk images for comprehensive forensic examinations.</p>
+                    <span class="tool-tag">Disk Forensics</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title fade-in">About BitEU</h2>
+            <div class="about-content fade-in">
+                <p>
+                    BitEU is dedicated to creating professional-grade digital forensics tools that are freely available to investigators, researchers, and security professionals worldwide. Our open-source approach ensures transparency, community-driven development, and continuous improvement.
+                </p>
+                <p>
+                    Each tool in our suite addresses specific forensic challenges, from vehicle telematics analysis to memory forensics, providing investigators with the specialized capabilities they need to uncover digital evidence effectively.
+                </p>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-number">4+</div>
+                        <div class="stat-label">Active Tools</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">100%</div>
+                        <div class="stat-label">Open Source</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">GPL v3</div>
+                        <div class="stat-label">Licensed</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title fade-in">Get Involved</h2>
+            <div class="contact-content fade-in">
+                <p>Join our community of forensic professionals and contribute to the development of cutting-edge investigation tools.</p>
+                <div class="contact-links">
+                    <a href="https://github.com/BitEU" target="_blank" class="contact-link">
+                        🔗 GitHub Organization
+                    </a>
+                    <a href="https://github.com/BitEU/FENDER/discussions" target="_blank" class="contact-link">
+                        💬 Community Forum
+                    </a>
+                    <a href="https://github.com/BitEU/FENDER/issues" target="_blank" class="contact-link">
+                        🐛 Report Issues
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2025 BitEU. All tools licensed under GNU General Public License v3.</p>
+                <p>Created for forensic investigators, researchers, and security professionals worldwide.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Fade in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all fade-in elements
+        document.addEventListener('DOMContentLoaded', () => {
+            const fadeElements = document.querySelectorAll('.fade-in');
+            fadeElements.forEach(el => observer.observe(el));
+
+            // Trigger first animation immediately
+            setTimeout(() => {
+                document.querySelector('.hero .fade-in').classList.add('visible');
+            }, 200);
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
