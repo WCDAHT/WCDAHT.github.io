@@ -307,11 +307,13 @@ python main.py
                 
                 const releaseData = await response.json();
                 
-                // For COMRADE, look for source code download
-                const sourceAsset = releaseData.zipball_url;
+                // Find the .exe file in the assets
+                const exeAsset = releaseData.assets.find(asset => 
+                    asset.name.toLowerCase().endsWith('.exe')
+                );
                 
-                if (!sourceAsset) {
-                    throw new Error('No source code found in the latest release');
+                if (!exeAsset) {
+                    throw new Error('No executable file found in the latest release');
                 }
                 
                 // Update button text with file info
@@ -319,8 +321,8 @@ python main.py
                 
                 // Create a temporary link and trigger download
                 const downloadLink = document.createElement('a');
-                downloadLink.href = sourceAsset;
-                downloadLink.download = `COMRADE-${releaseData.tag_name}.zip`;
+                downloadLink.href = exeAsset.browser_download_url;
+                downloadLink.download = exeAsset.name;
                 document.body.appendChild(downloadLink);
                 downloadLink.click();
                 document.body.removeChild(downloadLink);
