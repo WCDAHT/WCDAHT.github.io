@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="assets/logo.ico">
+    <title>Documentation - BitEU</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <style>
+        .markdown-content {
+            max-width: 900px;
+            margin: 120px auto 60px;
+            padding: 3rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            border: 1px solid rgba(74, 158, 255, 0.2);
+            backdrop-filter: blur(10px);
+            line-height: 1.8;
+        }
+
+        .markdown-content h1 {
+            color: #4a9eff;
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid rgba(74, 158, 255, 0.3);
+        }
+
+        .markdown-content h2 {
+            color: #64b5f6;
+            font-size: 2rem;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .markdown-content h3 {
+            color: #90caf9;
+            font-size: 1.5rem;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .markdown-content p {
+            margin-bottom: 1rem;
+            color: #e0e0e0;
+        }
+
+        .markdown-content ul,
+        .markdown-content ol {
+            margin-bottom: 1rem;
+            margin-left: 2rem;
+            color: #e0e0e0;
+        }
+
+        .markdown-content li {
+            margin-bottom: 0.5rem;
+        }
+
+        .markdown-content code {
+            background: rgba(74, 158, 255, 0.1);
+            padding: 0.2rem 0.4rem;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            color: #4a9eff;
+            font-size: 0.9em;
+        }
+
+        .markdown-content pre {
+            background: rgba(15, 20, 25, 0.8);
+            padding: 1.5rem;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin-bottom: 1rem;
+            border: 1px solid rgba(74, 158, 255, 0.2);
+        }
+
+        .markdown-content pre code {
+            background: none;
+            padding: 0;
+            color: #e0e0e0;
+            font-size: 0.95em;
+        }
+
+        .markdown-content a {
+            color: #4a9eff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .markdown-content a:hover {
+            color: #64b5f6;
+            text-decoration: underline;
+        }
+
+        .markdown-content blockquote {
+            border-left: 4px solid #4a9eff;
+            padding-left: 1.5rem;
+            margin: 1.5rem 0;
+            color: #b0b0b0;
+            font-style: italic;
+        }
+
+        .markdown-content table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 1rem;
+        }
+
+        .markdown-content th,
+        .markdown-content td {
+            padding: 0.75rem;
+            border: 1px solid rgba(74, 158, 255, 0.3);
+            text-align: left;
+        }
+
+        .markdown-content th {
+            background: rgba(74, 158, 255, 0.2);
+            color: #4a9eff;
+            font-weight: 600;
+        }
+
+        .markdown-content hr {
+            border: none;
+            border-top: 1px solid rgba(74, 158, 255, 0.3);
+            margin: 2rem 0;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 3rem;
+            color: #4a9eff;
+            font-size: 1.2rem;
+        }
+
+        .error {
+            text-align: center;
+            padding: 3rem;
+            color: #ff6b6b;
+            font-size: 1.2rem;
+        }
+
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            background: transparent;
+            color: #4a9eff;
+            border: 2px solid #4a9eff;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin: 120px auto 20px;
+            max-width: 900px;
+            display: flex;
+            width: fit-content;
+        }
+
+        .back-button:hover {
+            background: #4a9eff;
+            color: white;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                Steven's DF Tools for DAs
+            </a>
+            <ul class="nav-links">
+                <li><a href="https://github.com/BitEU" target="_blank">GitHub</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Back Button -->
+    <a href="index.html" class="back-button">
+        ← Back to Home
+    </a>
+
+    <!-- Markdown Content -->
+    <div class="markdown-content" id="content">
+        <div class="loading">Loading documentation...</div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 BitEU. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Get the file parameter from URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const filePath = urlParams.get('file');
+
+        if (!filePath) {
+            document.getElementById('content').innerHTML = 
+                '<div class="error">No documentation file specified.</div>';
+        } else {
+            // Use XMLHttpRequest for better file:// protocol support
+            const xhr = new XMLHttpRequest();
+            xhr.open('GET', filePath, true);
+            xhr.onload = function() {
+                if (xhr.status === 200 || xhr.status === 0) { // 0 for local file://
+                    try {
+                        // Parse markdown to HTML using marked.js
+                        const html = marked.parse(xhr.responseText);
+                        document.getElementById('content').innerHTML = html;
+                    } catch (error) {
+                        document.getElementById('content').innerHTML = 
+                            `<div class="error">Error parsing documentation: ${error.message}</div>`;
+                    }
+                } else {
+                    document.getElementById('content').innerHTML = 
+                        '<div class="error">Error loading documentation: File not found</div>';
+                }
+            };
+            xhr.onerror = function() {
+                document.getElementById('content').innerHTML = 
+                    '<div class="error">Error loading documentation: NetworkError when attempting to fetch resource.</div>';
+            };
+            xhr.send();
+        }
+    </script>
+</body>
+</html>

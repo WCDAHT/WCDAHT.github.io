@@ -4,36 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="assets/logo.ico">
-    <title>BitEU - Code & Tools</title>
+    <title>Steven's DF Tools</title>
     <link rel="stylesheet" href="styles.css">
-    <style>
-        /* Homepage specific styles */
-        .hero h1 {
-            font-size: 4rem;
-        }
-        
-        .hero .subtitle {
-            font-size: 1.5rem;
-        }
-        
-        @media (max-width: 768px) {
-            .hero .subtitle {
-                font-size: 1.2rem;
-            }
-        }
-    </style>
 </head>
 <body>
     <!-- Navigation -->
     <nav>
         <div class="nav-container">
             <a href="#" class="logo">
-                🔬 BitEU
+                Steven's DF Tools for DAs
             </a>
             <ul class="nav-links">
-                <li><a href="#tools">Tools</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
                 <li><a href="https://github.com/BitEU" target="_blank">GitHub</a></li>
             </ul>
         </div>
@@ -43,12 +24,16 @@
     <section class="hero">
         <div class="container">
             <div class="hero-content fade-in">
-                <h1>BitEU</h1>
-                <p class="subtitle">Code, Tools & Digital Tinkering</p>
-                <p class="hero-description">
-                    A collection of projects and tools built by someone who enjoys programming in C and Python, 
-                    exploring computer systems, and creating useful software for various purposes.
-                </p>
+                <h1>The WCDAHT Suite</h1>
+                <p class="subtitle">Vehicle forensics, content redaction, and more!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Description Section -->
+            <div class="container">
+            <div class="fade-in" style="max-width: 800px; margin: 0 auto; text-align: center;">
+                <p style="font-size: 1.4rem; line-height: 1.8; color: #e0e0e0; margin: 0;">There tools are just a small sample of what has been developed for usage by the WCDAO. For support or access to tools not listed here, please contact me at <a href="mailto:sschiavone@westchesterda.net" style="color: #4a9eff; text-decoration: none;">sschiavone@westchesterda.net</a>.</p>
             </div>
         </div>
     </section>
@@ -58,80 +43,59 @@
         <div class="container">
             <h2 class="section-title fade-in">Projects & Tools</h2>
             <div class="tools-grid">
-                <a href="fender.html" class="tool-card fade-in">
-                    <span class="tool-icon">🚗</span>
-                    <h3>FENDER</h3>
-                    <p>Forensic Extraction of Navigational Data & Event Records. Extract GPS location data from vehicle telematics binary files across multiple manufacturers.</p>
-                    <span class="tool-tag">Vehicle Forensics</span>
-                </a>
-                <a href="enf-extractor.html" class="tool-card fade-in">
-                    <span class="tool-icon">📊</span>
-                    <h3>ENF-Extractor</h3>
-                    <p>Extract Electrical Network Frequency (ENF) traces from audio and video files for timestamp verification and authentication.</p>
-                    <span class="tool-tag">Audio/Video Analysis</span>
-                </a>
-                <a href="comrade.html" class="tool-card fade-in">
-                    <span class="tool-icon">📡</span>
-                    <h3>COMRADE</h3>
-                    <p>Automated extraction and analysis of network adapter information from Windows memory dumps for forensic investigations.</p>
-                    <span class="tool-tag">Memory Forensics</span>
-                </a>
-                <a href="winspread.html" class="tool-card fade-in">
-                    <span class="tool-icon">💾</span>
-                    <h3>WinSpread</h3>
-                    <p>Extract and analyze Windows OS artifacts from file systems and disk images for comprehensive forensic examinations.</p>
-                    <span class="tool-tag">Disk Forensics</span>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="container">
-            <h2 class="section-title fade-in">About</h2>
-            <div class="about-content fade-in">
-                <p>
-                    Just someone who enjoys working with computers and writing code. I like building tools that solve interesting problems, 
-                    mostly using C and Python. These projects started as personal explorations and grew into something potentially useful for others.
-                </p>
-                <p>
-                    The tools here focus on digital forensics and system analysis, but really they're just hobby projects (or projects for the WCDAO) that I found too fun to put down.
-                </p>
-                <div class="stats-grid">
-                    <div class="stat-card">
-                        <div class="stat-number">4+</div>
-                        <div class="stat-label">Active Tools</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-number">100%</div>
-                        <div class="stat-label">Open Source</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-number">GPL v3</div>
-                        <div class="stat-label">Licensed</div>
+                <!-- Tool Box 1: Hashbrown -->
+                <div class="tool-card fade-in">
+                    <span class="tool-icon">🎬</span>
+                    <h3>Hashbrown</h3>
+                    <p>A video redaction tool designed for legal and investigative professionals. It allows users to selectively mute audio within specific time segments of a video file.</p>
+                    <div class="tool-buttons">
+                        <a href="content/Hashbrown/Hashbrown.v0.1.3.zip" class="btn-download" download>Download</a>
+                        <a href="reader.html?file=content/Hashbrown/readme.md" class="btn-read">Read More</a>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2 class="section-title fade-in">Get Involved</h2>
-            <div class="contact-content fade-in">
-                <p>Feel free to check out the code, report issues, or contribute improvements. Always happy to collaborate on interesting projects.</p>
-                <div class="contact-links">
-                    <a href="https://github.com/BitEU" target="_blank" class="contact-link">
-                        🔗 GitHub Profile
-                    </a>
-                    <a href="https://github.com/BitEU/FENDER/discussions" target="_blank" class="contact-link">
-                        💬 Community Forum
-                    </a>
-                    <a href="https://github.com/BitEU/FENDER/issues" target="_blank" class="contact-link">
-                        🐛 Report Issues
-                    </a>
+                <!-- Tool Box 2: FENDER -->
+                <div class="tool-card fade-in">
+                    <span class="tool-icon">🚗</span>
+                    <h3>FENDER</h3>
+                    <p>A tool to extract GPS location data from multiple vehicle manufacturers and provides an easy-to-use interface for forensic investigators.</p>
+                    <div class="tool-buttons">
+                        <a href="content/FENDER/FENDER.v0.2.5.exe" class="btn-download" download>Download</a>
+                        <a href="reader.html?file=content/FENDER/readme.md" class="btn-read">Read More</a>
+                    </div>
+                </div>
+
+                <!-- Tool Box 3: Google EI Parser -->
+                <div class="tool-card fade-in">
+                    <span class="tool-icon">🔍</span>
+                    <h3>Google EI Parser</h3>
+                    <p>Extracts and decodes the Google Search 'ei' parameter into human-readable timestamps.</p>
+                    <div class="tool-buttons">
+                        <a href="content/Google EI Parser/google_ei_time.v1.0.1.exe" class="btn-download" download>Download</a>
+                        <a href="reader.html?file=content/Google EI Parser/README.md" class="btn-read">Read More</a>
+                    </div>
+                </div>
+
+                <!-- Tool Box 4: Message Maestro -->
+                <div class="tool-card fade-in">
+                    <span class="tool-icon">💬</span>
+                    <h3>Message Maestro</h3>
+                    <p>View, tag, analyze, and export conversations from Kik, Snapchat, and Twitter.</p>
+                    <div class="tool-buttons">
+                        <a href="content/Message Maestro/Message_Maestro_v0.6.5.exe" class="btn-download" download>Download</a>
+                        <a href="reader.html?file=content/Message Maestro/readme.md" class="btn-read">Read More</a>
+                    </div>
+                </div>
+
+                <!-- Tool Box 5: COMRADE -->
+                <div class="tool-card fade-in">
+                    <span class="tool-icon">🔗</span>
+                    <h3>COMRADE</h3>
+                    <p>A GUI application for visualizing and managing complex relationship networks, mainly for mapping organized criminal groups.</p>
+                    <div class="tool-buttons">
+                        <a href="content/COMRADE/COMRADE v0.7.5.exe" class="btn-download" download>Download</a>
+                        <a href="reader.html?file=content/COMRADE/README.md" class="btn-read">Read More</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -140,12 +104,10 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <div class="footer-content">
-                <p>&copy; 2025 BitEU. All tools licensed under GNU General Public License v3.</p>
-                <p>Built by someone who enjoys coding and exploring how systems work.</p>
+            <p>&copy; 2025 BitEU. All rights reserved.</p>
             </div>
         </div>
-    </footer>
+    </section>
 
     <script>
         // Fade in animation on scroll

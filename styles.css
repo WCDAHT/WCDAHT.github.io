@@ -11,14 +11,31 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
     color: #e0e0e0;
-    background: linear-gradient(135deg, #0f1419 0%, #1a1a2e 50%, #16213e 100%);
+    background: #1a1a2e;
     min-height: 100vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 50% 50%, rgba(74, 158, 255, 0.1) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
 }
 
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
+    position: relative;
+    z-index: 2;
 }
 
 /* Navigation */
@@ -28,7 +45,7 @@ nav {
     width: 100%;
     background: rgba(15, 20, 25, 0.95);
     backdrop-filter: blur(10px);
-    z-index: 1000;
+    z-index: 1001;
     padding: 1rem 0;
     border-bottom: 1px solid rgba(74, 158, 255, 0.3);
 }
@@ -84,18 +101,6 @@ nav {
     padding: 120px 0 80px;
     text-align: center;
     position: relative;
-    overflow: hidden;
-}
-
-.hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: radial-gradient(circle at 50% 50%, rgba(74, 158, 255, 0.1) 0%, transparent 70%);
-    pointer-events: none;
 }
 
 .hero-content {
@@ -198,7 +203,7 @@ nav {
 /* Features Section */
 .features {
     padding: 80px 0;
-    background: rgba(26, 26, 46, 0.5);
+    position: relative;
 }
 
 .features-grid {
@@ -237,14 +242,15 @@ nav {
 /* Tools Section (Homepage) */
 .tools {
     padding: 80px 0;
-    background: rgba(26, 26, 46, 0.5);
+    position: relative;
 }
 
 .tools-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    display: flex;
+    flex-wrap: wrap;
     gap: 2rem;
     margin-top: 3rem;
+    justify-content: center;
 }
 
 .tool-card {
@@ -256,7 +262,11 @@ nav {
     backdrop-filter: blur(10px);
     text-decoration: none;
     color: inherit;
-    display: block;
+    display: flex;
+    flex-direction: column;
+    flex: 0 1 calc(33.333% - 1.5rem);
+    min-width: 300px;
+    max-width: 380px;
 }
 
 .tool-card:hover {
@@ -274,6 +284,52 @@ nav {
     color: #4a9eff;
     margin-bottom: 0.5rem;
     font-size: 1.5rem;
+}
+
+.tool-card p {
+    flex-grow: 1;
+    margin-bottom: 1.5rem;
+}
+
+.tool-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-top: auto;
+}
+
+.btn-download,
+.btn-read {
+    flex: 1;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    text-decoration: none;
+    text-align: center;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.btn-download {
+    background: linear-gradient(135deg, #4a9eff 0%, #2196f3 100%);
+    color: white;
+    box-shadow: 0 4px 15px rgba(74, 158, 255, 0.3);
+}
+
+.btn-download:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(74, 158, 255, 0.4);
+}
+
+.btn-read {
+    background: transparent;
+    color: #4a9eff;
+    border: 2px solid #4a9eff;
+}
+
+.btn-read:hover {
+    background: #4a9eff;
+    color: white;
+    transform: translateY(-2px);
 }
 
 .tool-tag {
@@ -502,6 +558,7 @@ footer {
     background: rgba(15, 20, 25, 0.9);
     padding: 3rem 0 2rem;
     border-top: 1px solid rgba(74, 158, 255, 0.3);
+    margin-top: auto;
 }
 
 .footer-content {
