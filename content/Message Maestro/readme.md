@@ -20,10 +20,6 @@ Message Maestro is a modern, GPU-accelerated desktop application for viewing, ta
   - Comprehensive message analytics with interactive charts and visualizations.
   - View message patterns, activity trends, response times, and conversation insights.
   - Export statistics reports to PDF and JSON formats.
-- **Sentiment Analysis:**
-  - Local sentiment analysis using NLTK and TextBlob for privacy-focused analysis.
-  - Real-time sentiment scoring and emotional trend visualization.
-  - Conversation-level sentiment summaries and message-level analysis.
 - **Extensible Architecture:**
   - Easily add new message parsers for other platforms by implementing the `BaseParser` interface.
 
@@ -117,48 +113,19 @@ Message Maestro includes a comprehensive statistics dashboard that provides deep
   - JSON data export for further analysis in external tools
   - Formatted reports with charts and detailed breakdowns
 
-### Sentiment Analysis
-
-The application includes local sentiment analysis capabilities that provide emotional insights into your conversations without sending data to external services.
-
-- **Privacy-First Analysis:**
-  - All sentiment analysis is performed locally using NLTK and TextBlob
-  - No data is sent to external APIs or cloud services
-  - Fast, real-time analysis with instant results
-
-- **Comprehensive Sentiment Scoring:**
-  - Overall conversation sentiment (positive, negative, neutral)
-  - Message-level sentiment analysis with confidence scores
-  - Emotional trend visualization over time
-  - Sentiment distribution charts and statistics
-
-- **Advanced Features:**
-  - Automatic dependency management (NLTK data downloading)
-  - Progress tracking for large conversation analysis
-  - Real-time sentiment updates as you browse messages
-  - Integration with the main statistics dashboard
-
-- **Supported Analysis Methods:**
-  - NLTK VADER sentiment analyzer for social media text
-  - TextBlob polarity and subjectivity analysis
-  - Fallback methods ensure analysis works even with limited dependencies
-
 ### Accessing Analytics
 
 1. **Open Statistics Dashboard:** Click the "Statistics" button in the main toolbar
 2. **View Overall Stats:** Browse comprehensive statistics for all loaded conversations
-3. **Sentiment Analysis:** Switch to the "Sentiment Analysis" tab for emotional insights
-4. **Export Reports:** Use the export buttons to save statistics and charts to PDF or JSON
+3. **Export Reports:** Use the export buttons to save statistics and charts to PDF or JSON
 
 ## Directory Structure
 
 - `message_viewer.py` — Main application (PyQt6 GUI)
 - `parsers/` — Platform-specific message parsers
-- `message_stats/` — Statistics and sentiment analysis modules
+- `message_stats/` — Statistics and analytics modules
   - `stats_dashboard.py` — Main statistics dashboard interface
   - `stats_calculator.py` — Statistical analysis engine
-  - `sentiment_analyzer.py` — Local sentiment analysis
-  - `sentiment_dashboard_tab.py` — Sentiment analysis UI
   - `chart_widgets.py` — Custom chart visualizations
   - `stats_exporter.py` — Export functionality for reports
 - `templates/` — Example export templates and sample data
@@ -173,10 +140,6 @@ The application includes local sentiment analysis capabilities that provide emot
 
 - **Statistics and Analytics:**
   - numpy — Numerical computations for statistics
-  - nltk — Natural language processing for sentiment analysis
-  - textblob — Alternative sentiment analysis library
-
-**Note:** NLTK and TextBlob are optional dependencies. The application will automatically detect available sentiment analysis libraries and gracefully degrade if they're not installed.
 
 Install all dependencies with `pip install -r requirements.txt`.
 
