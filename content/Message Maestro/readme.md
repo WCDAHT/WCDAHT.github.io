@@ -13,7 +13,7 @@ Message Maestro is a modern, GPU-accelerated desktop application for viewing, ta
 - **PDF Export:**
   - Export entire conversations to beautifully formatted PDFs, including tag legends and color-coded message bubbles.
 - **Media & Link Detection:**
-  - Messages with media or links are automatically highlighted.
+  - Messages with media are displayed for Snapchat and Kik.
 - **Keyboard Shortcuts:**
   - Efficient navigation and tagging with keyboard shortcuts (see TODO for planned enhancements).
 - **Statistics Dashboard:**
@@ -146,7 +146,3 @@ Install all dependencies with `pip install -r requirements.txt`.
 ## Contributing
 
 Contributions are welcome! To add support for a new platform, implement a new parser in `parsers/` by subclassing `BaseParser`.
-
-## License
-
-[MIT License](LICENSE)
