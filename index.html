@@ -50,7 +50,7 @@
                     <h3>Hashbrown</h3>
                     <p>A video redaction tool designed for legal and investigative professionals. It allows users to selectively mute audio within specific time segments of a video file.</p>
                     <div class="tool-buttons">
-                        <a href="#" class="btn-download" download>Download <span class="version-tag">Loading...</span></a>
+                        <a href="#" class="btn-download" download><span class="version-tag">Loading...</span></a>
                         <a href="reader.html?file=content/Hashbrown/readme.md" class="btn-read">Read More</a>
                     </div>
                 </div>
@@ -61,7 +61,7 @@
                     <h3>FENDER</h3>
                     <p>A tool to extract GPS location data from multiple vehicle manufacturers and provides an easy-to-use interface for forensic investigators.</p>
                     <div class="tool-buttons">
-                        <a href="#" class="btn-download" download>Download <span class="version-tag">Loading...</span></a>
+                        <a href="#" class="btn-download" download><span class="version-tag">Loading...</span></a>
                         <a href="reader.html?file=content/FENDER/readme.md" class="btn-read">Read More</a>
                     </div>
                 </div>
@@ -72,7 +72,7 @@
                     <h3>Google EI Parser</h3>
                     <p>Extracts and decodes the Google Search 'ei' parameter into human-readable timestamps.</p>
                     <div class="tool-buttons">
-                        <a href="#" class="btn-download" download>Download <span class="version-tag">Loading...</span></a>
+                        <a href="#" class="btn-download" download><span class="version-tag">Loading...</span></a>
                         <a href="reader.html?file=content/Google EI Parser/README.md" class="btn-read">Read More</a>
                     </div>
                 </div>
@@ -83,7 +83,7 @@
                     <h3>Message Maestro</h3>
                     <p>View, tag, analyze, and export conversations from Kik, Snapchat, and Twitter.</p>
                     <div class="tool-buttons">
-                        <a href="#" class="btn-download" download>Download <span class="version-tag">Loading...</span></a>
+                        <a href="#" class="btn-download" download><span class="version-tag">Loading...</span></a>
                         <a href="reader.html?file=content/Message Maestro/readme.md" class="btn-read">Read More</a>
                     </div>
                 </div>
@@ -94,7 +94,7 @@
                     <h3>COMRADE</h3>
                     <p>A GUI application for visualizing and managing complex relationship networks, mainly for mapping organized criminal groups.</p>
                     <div class="tool-buttons">
-                        <a href="#" class="btn-download" download>Download <span class="version-tag">Loading...</span></a>
+                        <a href="#" class="btn-download" download><span class="version-tag">Loading...</span></a>
                         <a href="reader.html?file=content/COMRADE/README.md" class="btn-read">Read More</a>
                     </div>
                 </div>
@@ -105,7 +105,7 @@
                     <h3>Grits</h3>
                     <p>A media amplification tool that allows users to easily adjust the volume of video or audio files with preset or custom amplification options.</p>
                     <div class="tool-buttons">
-                        <a href="#" class="btn-download" download>Download <span class="version-tag">Loading...</span></a>
+                        <a href="#" class="btn-download" download><span class="version-tag">Loading...</span></a>
                         <a href="reader.html?file=content/Grits/readme.md" class="btn-read">Read More</a>
                     </div>
                 </div>
@@ -116,7 +116,7 @@
                     <h3>Toast</h3>
                     <p>A high-performance desktop app for visualizing call detail record (CDR) relationships with automatic community detection.</p>
                     <div class="tool-buttons">
-                        <a href="#" class="btn-download" download>Download <span class="version-tag">Loading...</span></a>
+                        <a href="#" class="btn-download" download><span class="version-tag">Loading...</span></a>
                         <a href="reader.html?file=content/Toast/README.md" class="btn-read">Read More</a>
                     </div>
                 </div>
@@ -161,8 +161,8 @@
                         downloadBtn.href = `${folder}/${latestFile.name}`;
                         downloadBtn.setAttribute('download', latestFile.name);
                         
-                        // Extract and display version
-                        const versionMatch = latestFile.name.match(/v?([0-9.]+)/);
+                        // Extract and display version (matches patterns like v0.7.1 or 0.2.5)
+                        const versionMatch = latestFile.name.match(/v?(\d+\.\d+(?:\.\d+)?)/);
                         const version = versionMatch ? `v${versionMatch[1]}` : '';
                         versionTag.textContent = version;
                     } else {
