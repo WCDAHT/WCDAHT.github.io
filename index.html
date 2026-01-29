@@ -203,8 +203,8 @@
             loadLatestDownloads();
         });
 
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        // Smooth scrolling for navigation links (exclude download buttons)
+        document.querySelectorAll('a[href^="#"]:not(.btn-download)').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
