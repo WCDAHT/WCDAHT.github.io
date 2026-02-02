@@ -157,8 +157,8 @@
                         matchingFiles.sort((a, b) => b.name.localeCompare(a.name));
                         const latestFile = matchingFiles[0];
                         
-                        // Update download link
-                        downloadBtn.href = `${folder}/${latestFile.name}`;
+                        // Update download link using Git LFS media URL
+                        downloadBtn.href = `https://media.githubusercontent.com/media/${repoOwner}/${repoName}/main/${folder}/${latestFile.name}`;
                         downloadBtn.setAttribute('download', latestFile.name);
                         
                         // Extract and display version (matches patterns like v0.7.1 or 0.2.5)
